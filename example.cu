@@ -5,7 +5,7 @@
 #include <thrust/for_each.h>
 
 struct foo {
-  int add(int i) { return i + 1; }
+  int increment(int i) const { return i + 1; }
 };
 
 TEST_CASE("Mutable device lambda test") {
@@ -15,5 +15,5 @@ TEST_CASE("Mutable device lambda test") {
 
   foo f;
 
-  thrust::for_each(begin, end, [f] __device__(int i) mutable { f.add(i); });
+  thrust::for_each(begin, end, [f] __device__(int i) { f.increment(i); });
 }
