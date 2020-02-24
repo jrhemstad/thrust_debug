@@ -1,3 +1,5 @@
+// compile command:
+// nvcc --std=c++11 --expt-extended-lambda example.cu
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 
